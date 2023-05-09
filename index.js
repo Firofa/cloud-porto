@@ -1,12 +1,12 @@
 const express = require("express");
 
 const app = express();
-const port = 3000;
+const PORT = 8000;
+const HOST = "0.0.0.0";
 
 app.get("/", (req, res) => {
   res.sendFile("index.html", { root: __dirname });
 });
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
